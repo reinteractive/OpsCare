@@ -1,6 +1,6 @@
 require 'rails/generators'
 
-module Opscare
+module OpsCare
   class SetupGenerator < Rails::Generators::Base
     source_root File.expand_path("../templates", __FILE__)
 

@@ -1,19 +1,19 @@
-# Opscare
+# OpsCare Gem
 
 ## Gist
-[Opscare](https://reinteractive.net/service/ops-care) is Operation as a Service by _reinteractive_.
+[OpsCare](https://reinteractive.net/service/ops-care) is Ruby on Rails Operations as a Service by [reinteractive](https://reinteractive.net/).
 
-This gem ensure presence of a few dependencies (Bugsnag, Skylight, OkComputer) and provides a handy generator for the initial setups, according to our conventions and stacks.
+We use this gem to ensure the correct installation of a few OpsCare dependencies such as Bugsnag, Skylight and OkComputer and provide a handy generator for the initial setup, according to our OpsCare conventions.
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Add this line to the application's Gemfile:
 
 ```ruby
-gem 'opscare', :git => 'git@github.com:reinteractive/opscare.git'
+gem 'ops_care', :git => 'git@github.com:reinteractive/OpsCare.git', :branch => 'master'
 ```
 
-And then execute:
+And then bundle all the things:
 
 ```bash
 $ bundle
@@ -21,21 +21,21 @@ $ bundle
 
 ## Usage
 
-To use the generator, from your app's root directory, run:
+To use the generator, from the app's root directory, run:
 
 ```bash
-$ bundle exec rails g opscare:setup
+$ bundle exec rails g ops_care:setup
 ```
 
-It try to:
+During setup the generator will:
 
 - Generate Skylight's yml config file
 - Add Skylight's config to application.rb
 - Add Bugsnag initializer
 - Add OkComputer initializer
-- Add Tracks deploy hooks
+- Add deploy hooks for our OpsCare "Tracks" deployment system
 
 Most will have sensible defaults and don't need any customization because our stacks use envvars.
 
-Tracks deploy hooks will need to be tailored to the application's need.
+Deploy hooks will need to be tailored to the application's need and will be found in the `deploy_hooks` directory.
 

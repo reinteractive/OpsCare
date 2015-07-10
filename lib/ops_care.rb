@@ -1,7 +1,7 @@
-require "opscare/version"
+require "ops_care/version"
 require "skylight"
 require "bugsnag"
 require "okcomputer"
 
-module Opscare
+module OpsCare
 end

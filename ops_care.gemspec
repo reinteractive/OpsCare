@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'opscare/version'
+require 'ops_care/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "opscare"
-  spec.version       = Opscare::VERSION
+  spec.name          = "ops_care"
+  spec.version       = OpsCare::VERSION
   spec.authors       = [
     "Glenn Davy",
     "Joseph Glanville",
@@ -16,7 +16,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["support@reinteractive.net"]
 
   spec.summary       = %q{Configuration and support for reinteractive's OpsCare service.}
-  spec.homepage      = "https://github.com/reinteractive/opscare"
+  spec.homepage      = "https://github.com/reinteractive/OpsCare"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   spec.bindir        = "exe"
