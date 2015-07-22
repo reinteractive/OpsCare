@@ -35,5 +35,8 @@ module OpsCare
     def copy_deploy_hooks
       directory 'deploy_hooks', 'config/deploy/hooks'
     end
+    def copy_rake_tasks
+      directory 'rake_tasks', 'lib/tasks'
+    end
   end
 end
