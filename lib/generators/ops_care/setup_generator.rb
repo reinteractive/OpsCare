@@ -30,6 +30,7 @@ module OpsCare
       RUBY
       ["staging", "production"].each do |env|
         inject_into_file "config/environments/#{env}.rb", logstasher_config, after: "Application.configure do\n"
+        inject_into_file "config/environments/#{env}.rb", logstasher_config, after: "Rails.application.configure do\n"
       end
     end
     def copy_deploy_hooks
