@@ -17,7 +17,7 @@ namespace :opscare do
     end
 
     desc "Mangle data for a safer usage in envs other than prod"
-    task :mangle => :environment do |t,args|
+    task mangle: :environment do |t,args|
       # Fail safe. Don't remove this test!
       if ENV['RAILS_ENV'] == 'production'
         puts "You probably don't want to mangle production data..."
