@@ -23,11 +23,11 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_dependency "skylight",     "~> 0.6.1"
-  spec.add_dependency "okcomputer",   "~> 1.4.0"
-  spec.add_dependency "bugsnag",      "~> 2.8.10"
-  spec.add_dependency "logstasher",   "~> 0.6.5"
+  spec.add_dependency "skylight",     "~> 0"
+  spec.add_dependency "okcomputer",   "~> 1"
+  spec.add_dependency "bugsnag",      "~> 2"
+  spec.add_dependency "logstasher",   "~> 0"
 
-  spec.add_development_dependency "bundler",  "~> 1.10"
+  spec.add_development_dependency "bundler",  "~> 1"
   spec.add_development_dependency "rake",     "~> 10.0"
 end
