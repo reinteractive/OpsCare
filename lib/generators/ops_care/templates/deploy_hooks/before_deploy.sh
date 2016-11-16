@@ -10,7 +10,3 @@
 # # or
 # stop_resque
 
-# # For Whenever-based crons
-# # schedule.rb file should have this line at the top:
-# # set :job_template, "bash -l -c '[[ ! -f /tmp/STOP_CRONS ]] && . /etc/app_description && . $APP_LOCATION/shared/envvars && :job'"
-# wheneverize_worker
