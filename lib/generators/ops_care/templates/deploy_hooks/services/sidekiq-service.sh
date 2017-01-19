@@ -1,18 +1,11 @@
-sidekiq_init_script="/etc/init.d/sidekiq-${app_full_name}"
-
-service_sidekiq(){
-  if [ -f $sidekiq_init_script ] ; then
-    echo "executing ${sidekiq_init_script} $1"
-    $sidekiq_init_script $1
-  fi
-}
+sidekiq_service_name="sidekiq-${app_full_name}"
 
 stop_sidekiq(){
-  service_sidekiq stop
+  service ${sidekiq_service_name} stop
 }
 
 start_sidekiq(){
-  service_sidekiq start
+  service ${sidekiq_service_name} start
 }
 
 restart_sidekiq(){
@@ -21,5 +14,11 @@ restart_sidekiq(){
 }
 
 soft_stop_sidekiq(){
-  service_sidekiq soft_stop
+  sidekiq_init_script="/etc/init.d/${sidekiq_service_name}"
+  if [ -f $sidekiq_init_script ] ; then
+    echo "executing ${sidekiq_init_script} $1"
+    $sidekiq_init_script soft_stop
+  else 
+    service ${sidekiq_service_name} reload
+  fi
 }
