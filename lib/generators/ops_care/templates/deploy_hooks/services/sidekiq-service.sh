@@ -1,16 +1,16 @@
 sidekiq_service_name="sidekiq-${app_full_name}"
 
 stop_sidekiq(){
-  service ${sidekiq_service_name} stop
+  sudo service ${sidekiq_service_name} stop
 }
 
 start_sidekiq(){
-  service ${sidekiq_service_name} start
+  sudo service ${sidekiq_service_name} start
 }
 
 restart_sidekiq(){
-  service_sidekiq stop
-  service_sidekiq start
+  stop_sidekiq
+  start_sidekiq
 }
 
 soft_stop_sidekiq(){
