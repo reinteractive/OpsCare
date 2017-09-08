@@ -10,33 +10,31 @@
 
 namespace :opscare do
   namespace :data do
-
     def get_db_config(env)
-      db_config = Rails.application.config.database_configuration[env]
-      db_config
+      Rails.application.config.database_configuration[env]
     end
 
     desc "Mangle data for a safer usage in envs other than prod"
-    task mangle: :environment do |t,args|
+    task mangle: :environment do
       # Fail safe. Don't remove this test!
-      if ENV['RAILS_ENV'] == 'production'
+      if ENV["RAILS_ENV"] == "production"
         puts "You probably don't want to mangle production data..."
         puts "Exiting"
         exit
       end
 
       # Get the DB config if you're calling it directly
-      db = get_db_config(ENV['RAILS_ENV'])
+      # db = get_db_config(ENV["RAILS_ENV"])
 
       # Example action: adding ".local" at the end of the user.email field
       # (beware it will also edit your admin user account):
 
       # puts "Mangling emails addresses by appending '.local'"
       # %w( users ).each do |table|
+      # rubocop:disable Metrics/LineLength
       #   %x[ export PGPASSWORD=#{db['password']}; psql -h #{db['host']} -U #{db['username']} #{db['database']} -c "update #{table} set email= email || '.local' where email not like '%.local';" ]
+      # rubocop:enable Metrics/LineLength
       # end
-
     end # task :mangle
-
   end # namespace :data
 end # namespace :opscare
