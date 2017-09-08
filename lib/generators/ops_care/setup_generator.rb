@@ -15,8 +15,9 @@ module OpsCare
     def setup_skylight
       copy_file "skylight.yml", "config/skylight.yml"
 
-      inject_into_file "config/application.rb", after: "class Application < Rails::Application\n" do <<-'RUBY'
-
+      inject_into_file "config/application.rb",
+                       after: "class Application < Rails::Application\n" do
+        <<-'RUBY'
     config.skylight.environments += ["staging"]
     config.skylight.alert_log_file = true
 
