@@ -5,16 +5,16 @@
 ## Don't edit this file unless you know what you are doing,
 ## it could result in an undeployable app.
 ##
-require 'securerandom'
+require "securerandom"
 
 # If the envvar is not set, generate a random string.
 # It will be inaccessible, but at least secured.
-if ENV['HEALTHCHECK_TOKEN'].blank?
+if ENV["HEALTHCHECK_TOKEN"].blank?
   healthcheck_token = SecureRandom.hex(32)
   Rails.logger.info "No HEALTHCHECK_TOKEN envvar found. Staring OkComuter " \
                     "with a generated one: #{healthcheck_token}"
 else
-  healthcheck_token = ENV['HEALTHCHECK_TOKEN']
+  healthcheck_token = ENV["HEALTHCHECK_TOKEN"]
 end
 # Mount the health checks at a tokenized url
 OkComputer.mount_at = "health_checks_#{healthcheck_token}"
