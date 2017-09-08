@@ -11,7 +11,8 @@ require 'securerandom'
 # It will be inaccessible, but at least secured.
 if ENV['HEALTHCHECK_TOKEN'].blank?
   healthcheck_token = SecureRandom.hex(32)
-  Rails.logger.info "No HEALTHCHECK_TOKEN envvar found. Staring OkComuter with a generated one: #{healthcheck_token}"
+  Rails.logger.info "No HEALTHCHECK_TOKEN envvar found. Staring OkComuter " \
+                    "with a generated one: #{healthcheck_token}"
 else
   healthcheck_token = ENV['HEALTHCHECK_TOKEN']
 end
