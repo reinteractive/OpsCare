@@ -31,9 +31,7 @@ namespace :opscare do
 
       # puts "Mangling emails addresses by appending '.local'"
       # %w( users ).each do |table|
-      # rubocop:disable Metrics/LineLength
       #   %x[ export PGPASSWORD=#{db['password']}; psql -h #{db['host']} -U #{db['username']} #{db['database']} -c "update #{table} set email= email || '.local' where email not like '%.local';" ]
-      # rubocop:enable Metrics/LineLength
       # end
     end # task :mangle
   end # namespace :data
