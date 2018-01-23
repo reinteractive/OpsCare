@@ -1,8 +1,8 @@
-whenever_bin="${current_app_path}/bin/whenever"
+whenever_bin="${this_release_dir}/bin/whenever"
 
 wheneverize(){
   if [ -f ${whenever_bin} ] ; then
-    cd ${current_app_path}
+    cd ${this_release_dir}
     ${whenever_bin} --update-crontab ${app_full_name} --set "environment=${FRAMEWORK_ENV}"
   fi
 }

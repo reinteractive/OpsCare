@@ -1,10 +1,10 @@
 # app servers
-. ${current_app_path}/config/deploy/hooks/services/unicorn-service.sh
-. ${current_app_path}/config/deploy/hooks/services/puma-service.sh
+. ${this_release_dir}/config/deploy/hooks/services/unicorn-service.sh
+. ${this_release_dir}/config/deploy/hooks/services/puma-service.sh
 
 # Worker services
-. ${current_app_path}/config/deploy/hooks/services/delayed-job-service.sh
-. ${current_app_path}/config/deploy/hooks/services/sidekiq-service.sh
-. ${current_app_path}/config/deploy/hooks/services/resque-service.sh
-. ${current_app_path}/config/deploy/hooks/services/pushr-service.sh
-. ${current_app_path}/config/deploy/hooks/services/whenever-service.sh
+. ${this_release_dir}/config/deploy/hooks/services/delayed-job-service.sh
+. ${this_release_dir}/config/deploy/hooks/services/sidekiq-service.sh
+. ${this_release_dir}/config/deploy/hooks/services/resque-service.sh
+. ${this_release_dir}/config/deploy/hooks/services/pushr-service.sh
+. ${this_release_dir}/config/deploy/hooks/services/whenever-service.sh

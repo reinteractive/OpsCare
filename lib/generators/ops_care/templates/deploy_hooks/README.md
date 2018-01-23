@@ -27,7 +27,7 @@ Typically, a hook will always begin with:
 
 # Loading all the services helpers.
 # Don't touch this line
-. ${current_app_path}/config/deploy/hooks/services/load.sh
+. ${this_release_dir}/config/deploy/hooks/services/load.sh
 ```
 
 Then, depending one the needs of the hook, it will continue like:
@@ -38,8 +38,8 @@ Then, depending one the needs of the hook, it will continue like:
 zdd_unicorn
 
 # Set Whenever cron jobs
-[[ -f "${current_app_path}/bin/whenever" ]] && \
-  cd ${current_app_path} && ./bin/whenever --write-crontab
+[[ -f "${this_release_dir}/bin/whenever" ]] && \
+  cd ${this_release_dir} && ./bin/whenever --write-crontab
 
 # Creating a required directory
 mkdir -p ${this_release_dir}/vendor/assets/javascript
