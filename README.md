@@ -10,7 +10,7 @@ We use this gem to ensure the correct installation of a few OpsCare dependencies
 Add this line to the application's Gemfile:
 
 ```ruby
-gem 'ops_care', :git => 'git@github.com:reinteractive/OpsCare.git', :branch => 'master'
+gem "ops_care", github: "reinteractive/OpsCare", branch: "master"
 ```
 
 And then bundle all the things:
@@ -38,4 +38,3 @@ During setup the generator will:
 Most will have sensible defaults and don't need any customization because our stacks use envvars.
 
 Deploy hooks will need to be tailored to the application's need and will be found in the `deploy_hooks` directory.
-
