@@ -10,7 +10,7 @@ We use this gem to ensure the correct installation of a few OpsCare dependencies
 Add this line to the application's Gemfile:
 
 ```ruby
-gem "ops_care", github: "reinteractive/OpsCare", branch: "master"
+gem "ops_care", git: "git@github.com:reinteractive/OpsCare.git", branch: "master"
 ```
 
 And then bundle all the things:
