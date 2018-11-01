@@ -34,6 +34,7 @@ During setup the generator will:
 - Add Bugsnag initializer
 - Add OkComputer initializer
 - Add deploy hooks for our OpsCare "Tracks" deployment system
+- Add healthcheck and mangling rake tasks
 
 Most will have sensible defaults and don't need any customization because our stacks use envvars.
 
