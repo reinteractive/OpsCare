@@ -14,7 +14,7 @@ namespace :opscare do
       version = version_check[/Version: (.*)/,1]
 
       # return the sha for bash to compare
-      puts version
+      puts "opscare_helthcheck_sha:#{version}"
     end
   end
 end
